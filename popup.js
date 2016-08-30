@@ -11,7 +11,7 @@ var values = chrome.storage.sync.get('currentValues', function(data) {
     setColNumber = data.currentValues.setColNumber;
 
     $('#turn_up').prop('checked', overlayInit);
-    $('#containerWidth').val(setContainer);
+    $('#container_width').val(setContainer);
     $('#gutter').val(setGutter);
     $('#columns').val(setColNumber);
 
