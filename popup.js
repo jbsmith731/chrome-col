@@ -11,7 +11,7 @@ document.getElementById('columns').addEventListener("keyup", function(){
 
 document.getElementById('gutter').addEventListener("keyup", function(){
   var newValue = this.value;
-  updateValues('columns', newValue);
+  updateValues('gutter', newValue);
 });
 
 document.getElementById('turn_up').addEventListener("keyup", function(){
