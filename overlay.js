@@ -108,10 +108,9 @@
 chrome.runtime.onConnect.addListener(function(port) {
     port.onMessage.addListener(function(msg) {
         console.log(msg);
-
+        $('body').removeColumnOverlay();
         if (msg.overlayInit) {
             // remove columns then add updated values
-            $('body').removeColumnOverlay();
             $('body').columnOverlay({
                 containerWidth: msg.setContainer,
                 colNumber: msg.setColNumber,

@@ -37,7 +37,7 @@ document.getElementById('gutter').addEventListener("keyup", function(){
   updateValues('gutter', newValue);
 });
 
-document.getElementById('turn_up').addEventListener("keyup", function(){
+document.getElementById('turn_up').addEventListener("change", function(){
   updateValues('check', null);
 });
 
@@ -53,9 +53,7 @@ function updateValues(type, amount) {
   } else if (type== 'container') {
     setContainer = amount;
   } else if (type == 'check') {
-    if (!overlayInit) {
-      return;
-    }
+
   }
 
   // sends a message to the current tab with the updated values
