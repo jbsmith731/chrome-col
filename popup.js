@@ -1,4 +1,4 @@
-var setContainer = '1200px',
+var setContainer = 1200,
     setColNumber = 12,
     setGutter    = 24,
     overlayInit = false;
@@ -19,6 +19,11 @@ var values = chrome.storage.sync.get('currentValues', function(data) {
         updateValues('check', null);
     }
   }
+});
+
+document.getElementById('container_width').addEventListener("keyup", function(){
+  var newValue = parseInt(this.value);
+  updateValues('container', newValue);
 });
 
 document.getElementById('columns').addEventListener("keyup", function(){
@@ -45,6 +50,8 @@ function updateValues(type, amount) {
     setColNumber = amount;
   } else if (type == 'gutter') {
     setGutter = amount;
+  } else if (type== 'container') {
+    setContainer = amount;
   } else if (type == 'check') {
     if (!overlayInit) {
       return;
