@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "chrome-col",
+  "description": "Create a column overlay",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery-1.11.3.min.js", "overlay.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "scripts/*"
+  ],
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ]
+}
