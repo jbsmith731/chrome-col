@@ -20,7 +20,7 @@
 
         // Add overlay markup to HTML
         $('body').prepend(
-            '<div class="column-overlay"><div class="container"><div class="column-overlay-row"></div></div></div>'
+            '<div class="column-overlay"><div class="overlay-container"><div class="column-overlay-row"></div></div></div>'
         );
 
         // Create colmns
@@ -64,7 +64,7 @@
             'z-index': 9998
         });
 
-        $('.container').css({
+        $('.overlay-container').css({
             'width': settings.containerWidth,
             'margin': '0 auto'
         })
@@ -90,7 +90,7 @@
             'background-color': settings.color
         });
 
-        $('.container , .column-overlay-row, .col').css('height', '100vh');
+        $('.overlay-container , .column-overlay-row, .col').css('height', '100vh');
 
         // Toggle btn
         $('.overlay-toggle').css({
