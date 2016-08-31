@@ -20,8 +20,7 @@
         containerWidth: 1200,
         colNumber: 12,
         gutter: 30,
-        color: 'rgba(255,0,0,0.2)',
-        containerWidth: '1200px'
+        color: 'rgba(255,0,0,0.2)'
     }, options);
 
     // CREATE ELEMENTS
