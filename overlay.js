@@ -5,6 +5,13 @@
       $('#column-overlay').remove();
     }
 
+    // Helper to set multiple attributes
+    function setAttributes(el, options) {
+       Object.keys(options).forEach(function(attr) {
+         el.setAttribute(attr, options[attr]);
+       })
+    }
+
     $.fn.columnOverlay = function(options) {
 
         var settings = $.extend({
@@ -31,41 +38,22 @@
         colOverlay.appendChild(createContainer).setAttribute('id', 'overlay-container');
         var container = document.getElementById('overlay-container');
 
-        // create the row and append to overlay container
+        // Create the row and append to overlay container
         container.appendChild(createRow).setAttribute('id', 'column-overlay-row');
         var overlayRow = document.getElementById('column-overlay-row');
 
-        // Create colmns
+        // Create columns
         for (var i = 1; i <= settings.colNumber; i++) {
-            $('#column-overlay-row').append(
-                $('<div/>', {
-                    id: 'overlay-col-' + i,
-                    'class': 'col'
-                })
-            );
+          var createCol = document.createElement('div'),
+              createBox = document.createElement('div');
+
+          overlayRow.appendChild(createCol);
+          setAttributes(createCol, {'id': 'col-' + i, 'class': 'col', 'style': 'width:' + (1 / settings.colNumber) * 100 + '%; padding: 0 ' + settings.gutter / 2 + 'px; box-sizing: border-box;'});
+
+          // Create box element inside of columns
+          document.getElementById('col-' + i).appendChild(createBox);
+          setAttributes(createBox, {'class': 'box', 'style': 'height: 100%; width: 100%; background-color: rgba(255, 0, 0, 0.2);'});
         }
-
-        // .box element added inside column to add colored background
-        $('.col').append('<div class="box"></div>');
-
-        var col    = document.getElementsByClassName('col'),
-            colBox = document.getElementsByClassName('box');
-
-
-        // TOGGLE OVERLAY
-        // =======================
-        // $('.overlay-toggle').on('click', function(e) {
-        //     e.preventDefault();
-        //     $('#column-overlay').toggleClass('hidden');
-        //
-        //     if ($('#column-overlay').hasClass('hidden')) {
-        //         $('#column-overlay').css('display', 'none');
-        //         $('.col').css('height', 0);
-        //     } else {
-        //         $('#column-overlay').css('display', 'block');
-        //         $('.col').css('height', '100vh');
-        //     }
-        // });
 
 
         // CSS
@@ -79,24 +67,6 @@
 
         // Overlay row
         overlayRow.style.cssText = 'display: -webkit-flex; display: flex; flex-direction: row; height:100vh; margin: 0 -' + settings.gutter / 2 + 'px;'
-
-        // Individual column
-        $('.col').css({
-            'width': (1 / settings.colNumber) * 100 + '%',
-            'height': '100vh',
-            'padding': '0 ' + settings.gutter / 2 + 'px',
-            'box-sizing': 'border-box'
-        });
-
-        // col.style.cssText = 'width:' + (1 / settings.colNumber) * 100 + '%; padding: 0 ' + settings.gutter / 2 + 'px; box-sizing: border-box;'
-
-        // Red box that makes columns visibile
-        $('.box').css({
-            'height': '100%',
-            'width': '100%',
-            'background-color': settings.color
-        });
-        // colBox.style.cssText = 'height: 100%; width: 100%; background-color: rgba(255, 0, 0, 0.2);';
     }
 
 }(jQuery));
