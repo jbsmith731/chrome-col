@@ -49,11 +49,11 @@
           createBox = document.createElement('div');
 
       overlayRow.appendChild(createCol);
-      setAttributes(createCol, {'id': 'col-' + i, 'class': 'col', 'style': 'width:' + (1 / settings.colNumber) * 100 + '%; padding: 0 ' + settings.gutter / 2 + 'px; box-sizing: border-box;'});
+      setAttributes(createCol, {'id': 'col-' + i, 'class': 'col', 'style': 'width:' + (1 / settings.colNumber) * 100 + '%; padding: 0 ' + settings.gutter / 2 + 'px; box-sizing: border-box; pointer-events: none;'});
 
       // Create box element inside of columns
       document.getElementById('col-' + i).appendChild(createBox);
-      setAttributes(createBox, {'class': 'box', 'style': 'height: 100%; width: 100%; background-color: rgba(255, 0, 0, 0.2);'});
+      setAttributes(createBox, {'class': 'box', 'style': 'height: 100%; width: 100%; background-color: rgba(255, 0, 0, 0.2); pointer-events: none;'});
     }
 
 
@@ -61,13 +61,13 @@
     // =======================
 
     // Column-overlay
-    colOverlay.style.cssText = "position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 9999";
+    colOverlay.style.cssText = "position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 9999; pointer-events: none;";
 
     // Overlay container
-    container.style.cssText = 'height: 100vh; width:' + settings.containerWidth + 'px; margin: 0 auto';
+    container.style.cssText = 'height: 100vh; width:' + settings.containerWidth + 'px; margin: 0 auto; pointer-events: none;';
 
     // Overlay row
-    overlayRow.style.cssText = 'display: -webkit-flex; display: flex; flex-direction: row; height:100vh; margin: 0 -' + settings.gutter / 2 + 'px;'
+    overlayRow.style.cssText = 'display: -webkit-flex; display: flex; flex-direction: row; height:100vh; margin: 0 -' + settings.gutter / 2 + 'px; pointer-events: none;';
   }
 
 }(jQuery));
