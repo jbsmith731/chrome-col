@@ -80,12 +80,12 @@ function saveCurrentValues() {
   };
   // Check that there's some code there.
   if (!theValue) {
-    message('Error: No value specified');
+    console.log('Error: No value specified');
     return;
   }
   // Save it using the Chrome extension storage API.
   chrome.storage.sync.set({'currentValues': theValue}, function() {
     // Notify that we saved.
-    message('Settings saved');
+    console.log('Settings saved');
   });
 }
