@@ -22,16 +22,8 @@ var values = chrome.storage.sync.get('currentValues', function(data) {
 });
 
 document.getElementById('container_width').addEventListener("keyup", function(){
-  var newValue = this.value;
-
-  // if there is no unit we assume the number is a pixel value
-  /* not isNaN is confusing but I needed to check lenght of the value
-  to prevent adding "px" to an empty input */
-  if (!isNaN(this.value) && this.value.length > 0) {
-    updateValues('container', newValue + 'px');
-  } else {
-    updateValues('container', newValue);
-  }
+  var newValue = parseInt(this.value);
+  updateValues('container', newValue);
 });
 
 document.getElementById('columns').addEventListener("keyup", function(){
