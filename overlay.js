@@ -1,5 +1,3 @@
-(function($) {
-
   // removes overlay when updating
   $.fn.removeColumnOverlay = function() {
     if(document.getElementById('column-overlay')) {
@@ -70,7 +68,6 @@
     overlayRow.style.cssText = 'display: -webkit-flex; display: flex; flex-direction: row; height:100vh; margin: 0 -' + settings.gutter / 2 + 'px; pointer-events: none;';
   }
 
-}(jQuery));
 
 // ** Listen for updates **
 
