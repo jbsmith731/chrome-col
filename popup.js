@@ -21,13 +21,23 @@ var values = chrome.storage.sync.get('currentValues', function(data) {
   }
 });
 
+function splitUnit (v) {
+    if (typeof v === 'string' && v !== ""){
+        var split = v.match(/^([-.\d]+(?:\.\d+)?)(.*)$/);
+        return {'value':split[1].trim(),  'unit':split[2].trim()};
+    }
+    else{
+        return { 'value':v, 'unit':"" }
+    }
+}
+
 document.getElementById('container_width').addEventListener("keyup", function(){
   var newValue = this.value;
 
   // if there is no unit we assume the number is a pixel value
   /* not isNaN is confusing but I needed to check lenght of the value
   to prevent adding "px" to an empty input */
-  if (!isNaN(this.value) && this.value.length > 0) {
+  if (!isNaN(newValue) && newValue.length > 0) {
     updateValues('container', newValue + 'px');
   } else {
     updateValues('container', newValue);
@@ -41,8 +51,16 @@ document.getElementById('columns').addEventListener("keyup", function(){
 
 
 document.getElementById('gutter').addEventListener("keyup", function(){
+
   var newValue = parseInt(this.value);
   updateValues('gutter', newValue);
+  // var newValue = this.value;
+
+  // if (newValue.includes('%')) {
+  //   alert('no percentages')
+  // } else {
+  //   updateValues('gutter', splitUnit(this.value).value / 2 + splitUnit(this.value).unit)
+  // }
 });
 
 document.getElementById('turn_up').addEventListener("change", function(){
