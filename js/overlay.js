@@ -73,7 +73,7 @@ var values = chrome.storage.sync.get('currentValues', function(data) {
 
 chrome.runtime.onConnect.addListener(function(port) {
     port.onMessage.addListener(function(msg) {
-        console.log(msg);
+        // console.log(msg);
         removeColumnOverlay();
         if (msg.overlayInit) {
           // remove columns then add updated values

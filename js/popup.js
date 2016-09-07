@@ -92,6 +92,6 @@ function saveCurrentValues() {
   // Save it using the Chrome extension storage API.
   chrome.storage.sync.set({'currentValues': theValue}, function() {
     // Notify that we saved.
-    console.log('Settings saved');
+    // console.log('Settings saved');
   });
 }
