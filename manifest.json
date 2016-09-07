@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Columnize - Configurable Column Overlay",
-  "description": "Overlay a configurable grid on your website to help you nail all those gnary offsets",
+  "description": "Overlay a configurable grid on your website to help you nail all those gnarly offsets",
   "version": "0.1",
 
   "browser_action": {
