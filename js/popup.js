@@ -26,20 +26,34 @@ var values = chrome.storage.sync.get('currentValues', function(data) {
 });
 
 
-containerInput.addEventListener("keyup", function(){
-  var newValue = parseInt(this.value);
-  updateValues('container', newValue);
-});
+function getValues(el, type) {
+  el.addEventListener("keyup", function(){
+    var newValue = parseInt(this.value);
+    updateValues(type, newValue);
+  });
 
-columnInput.addEventListener("keyup", function(){
-  var newValue = parseInt(this.value);
-  updateValues('columns', newValue);
-});
+  el.addEventListener("input", function(){
+    var newValue = parseInt(this.value);
+    updateValues(type, newValue);
+  });
+}
 
-gutterInput.addEventListener("keyup", function(){
-  var newValue = parseInt(this.value);
-  updateValues('gutter', newValue);
-});
+
+
+getValues(containerInput, 'container');
+getValues(columnInput, 'columns');
+getValues(gutterInput, 'gutter');
+
+
+// columnInput.addEventListener("keyup", function(){
+//   var newValue = parseInt(this.value);
+//   updateValues('columns', newValue);
+// });
+
+// gutterInput.addEventListener("keyup", function(){
+//   var newValue = parseInt(this.value);
+//   updateValues('gutter', newValue);
+// });
 
 checkboxInput.addEventListener("change", function(){
   updateValues('check', null);
