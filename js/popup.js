@@ -25,7 +25,8 @@ var values = chrome.storage.sync.get('currentValues', function(data) {
   }
 });
 
-
+// Detects change when new number is entered or
+// when up/down btns are clicked
 function getValues(el, type) {
   el.addEventListener("keyup", function(){
     var newValue = parseInt(this.value);
@@ -38,22 +39,9 @@ function getValues(el, type) {
   });
 }
 
-
-
 getValues(containerInput, 'container');
 getValues(columnInput, 'columns');
 getValues(gutterInput, 'gutter');
-
-
-// columnInput.addEventListener("keyup", function(){
-//   var newValue = parseInt(this.value);
-//   updateValues('columns', newValue);
-// });
-
-// gutterInput.addEventListener("keyup", function(){
-//   var newValue = parseInt(this.value);
-//   updateValues('gutter', newValue);
-// });
 
 checkboxInput.addEventListener("change", function(){
   updateValues('check', null);
@@ -63,7 +51,6 @@ checkboxInput.addEventListener("change", function(){
 function updateValues(type, amount) {
   // check if the overlay init is checked
   overlayInit = checkboxInput.checked;
-
 
   if (type == 'columns') {
     setColNumber = amount;
