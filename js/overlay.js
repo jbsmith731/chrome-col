@@ -1,5 +1,5 @@
   // removes overlay when updating
-  $.fn.removeColumnOverlay = function() {
+  function removeColumnOverlay() {
     if(document.getElementById('column-overlay')) {
       document.getElementById('column-overlay').remove();
     }
@@ -12,14 +12,7 @@
      })
   }
 
-  $.fn.columnOverlay = function(options) {
-
-    var settings = $.extend({
-        containerWidth: 1200,
-        colNumber: 12,
-        gutter: 30,
-        color: 'rgba(255,0,0,0.2)'
-    }, options);
+  function columnOverlay (settings) {
 
     // CREATE ELEMENTS
     // =======================
@@ -72,7 +65,7 @@
 var values = chrome.storage.sync.get('currentValues', function(data) {
   if (data.currentValues) {
     if (!data.currentValues.overlayInit) {
-        $('body').removeColumnOverlay();
+        removeColumnOverlay();
     }
   }
 });
@@ -81,14 +74,14 @@ var values = chrome.storage.sync.get('currentValues', function(data) {
 chrome.runtime.onConnect.addListener(function(port) {
     port.onMessage.addListener(function(msg) {
         console.log(msg);
-        $('body').removeColumnOverlay();
+        removeColumnOverlay();
         if (msg.overlayInit) {
-            // remove columns then add updated values
-            $('body').columnOverlay({
-                containerWidth: msg.setContainer,
-                colNumber: msg.setColNumber,
-                gutter: msg.setGutter
-            });
+          // remove columns then add updated values
+          columnOverlay({
+            containerWidth: msg.setContainer,
+            colNumber: msg.setColNumber,
+            gutter: msg.setGutter
+          });
         }
     });
 });

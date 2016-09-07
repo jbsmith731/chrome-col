@@ -3,46 +3,53 @@ var setContainer = 1200,
     setGutter    = 24,
     overlayInit = false;
 
+var checkboxInput  = document.getElementById('turn_up'),
+    containerInput = document.getElementById('container_width'),
+    columnInput    = document.getElementById('columns'),
+    gutterInput    = document.getElementById('gutter');
+
 var values = chrome.storage.sync.get('currentValues', function(data) {
   if (data.currentValues) {
-    overlayInit = data.currentValues.overlayInit;
+    overlayInit  = data.currentValues.overlayInit;
     setContainer = data.currentValues.setContainer;
-    setGutter = data.currentValues.setGutter;
+    setGutter    = data.currentValues.setGutter;
     setColNumber = data.currentValues.setColNumber;
 
-    $('#turn_up').prop('checked', overlayInit);
-    $('#container_width').val(setContainer);
-    $('#gutter').val(setGutter);
-    $('#columns').val(setColNumber);
+    // $('#turn_up').prop('checked', overlayInit);
+    checkboxInput.checked = overlayInit;
+    containerInput.value  = setContainer;
+    gutterInput.value     = setGutter;
+    columnInput.value     = setColNumber;
 
     updateValues('check', null);
   }
 });
 
-document.getElementById('container_width').addEventListener("keyup", function(){
+
+containerInput.addEventListener("keyup", function(){
   var newValue = parseInt(this.value);
   updateValues('container', newValue);
 });
 
-document.getElementById('columns').addEventListener("keyup", function(){
+columnInput.addEventListener("keyup", function(){
   var newValue = parseInt(this.value);
   updateValues('columns', newValue);
 });
 
-
-document.getElementById('gutter').addEventListener("keyup", function(){
+gutterInput.addEventListener("keyup", function(){
   var newValue = parseInt(this.value);
   updateValues('gutter', newValue);
 });
 
-document.getElementById('turn_up').addEventListener("change", function(){
+checkboxInput.addEventListener("change", function(){
   updateValues('check', null);
 });
 
 
 function updateValues(type, amount) {
   // check if the overlay init is checked
-  overlayInit = $('#turn_up').is(':checked');
+  overlayInit = checkboxInput.checked;
+
 
   if (type == 'columns') {
     setColNumber = amount;
@@ -71,10 +78,10 @@ function updateValues(type, amount) {
 function saveCurrentValues() {
   // Get a value saved in a form.
   var theValue = {
-    "overlayInit": overlayInit,
-    "setContainer": setContainer,
-    "setGutter": setGutter,
-    "setColNumber": setColNumber
+    "overlayInit"  : overlayInit,
+    "setContainer" : setContainer,
+    "setGutter"    : setGutter,
+    "setColNumber" : setColNumber
   };
   // Check that there's some code there.
   if (!theValue) {
