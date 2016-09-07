@@ -15,9 +15,7 @@ var values = chrome.storage.sync.get('currentValues', function(data) {
     $('#gutter').val(setGutter);
     $('#columns').val(setColNumber);
 
-    if (data.currentValues.overlayInit) {
-        updateValues('check', null);
-    }
+    updateValues('check', null);
   }
 });
 

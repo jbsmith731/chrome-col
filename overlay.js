@@ -59,7 +59,7 @@
     // =======================
 
     // Column-overlay
-    colOverlay.style.cssText = "position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 9999; pointer-events: none;";
+    colOverlay.style.cssText = "position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 987654321; pointer-events: none;";
 
     // Overlay container
     container.style.cssText = 'height: 100vh; width:' + settings.containerWidth + 'px; margin: 0 auto; pointer-events: none;';
@@ -68,8 +68,15 @@
     overlayRow.style.cssText = 'display: -webkit-flex; display: flex; flex-direction: row; height:100vh; margin: 0 -' + settings.gutter / 2 + 'px; pointer-events: none;';
   }
 
-
 // ** Listen for updates **
+var values = chrome.storage.sync.get('currentValues', function(data) {
+  if (data.currentValues) {
+    if (!data.currentValues.overlayInit) {
+        $('body').removeColumnOverlay();
+    }
+  }
+});
+
 
 chrome.runtime.onConnect.addListener(function(port) {
     port.onMessage.addListener(function(msg) {
