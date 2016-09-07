@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "chrome-col",
-  "description": "Create a column overlay",
-  "version": "1.0",
+  "name": "Columnize - Configurable Column Overlay",
+  "description": "Overlay a configurable grid on your website to help you nail all those gnary offsets",
+  "version": "0.1",
 
   "browser_action": {
     "default_popup": "popup.html"
