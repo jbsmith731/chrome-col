@@ -1,8 +1,6 @@
-Settings > Extensions
+##Install from github
+
+- [Download](https://github.com/jbsmith731/chrome-col/archive/master.zip)
+- Chrome: Settings > Extensions
 - Turn on developer mode
 - Load unpacked extension
-- Refresh chrome extension
-- Refresh browser to see each change 
-
-
-[Chrome message passing](https://developer.chrome.com/apps/messaging#connect)
