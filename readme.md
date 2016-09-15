@@ -4,7 +4,7 @@
 - Chrome: Settings > Extensions
 - Turn on developer mode
 - Load unpacked extension
-- When the extension is first added to Chrome, Chrome will not load the extension on pages that are currently open. You need to refresh those pages or restart Chrome to use the extension.
+- When the extension is first added to Chrome, Chrome will not load the extension on pages that are currently open. Refresh open pages or restart Chrome to use the extension.
 
 
 ![column extension in action](/img/screenshot.png?raw=true "Extension in action!")
