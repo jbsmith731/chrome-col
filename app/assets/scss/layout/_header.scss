@@ -1,7 +1,18 @@
-/* 
+/*
 
 -------------------------------------------------------------
 
 HEADER
 
 */
+
+header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 2.5rem;
+  text-align: center;
+  color: rgba($black, 0.4);
+  border-top: 2px solid $red;
+}

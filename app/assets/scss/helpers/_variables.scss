@@ -9,18 +9,18 @@ VARIABLES
 // Descriptive Colors
 $black   : #000000;
 $white   : #ffffff;
-$blue    : #2196F3;
+$red     : #f44336;
 
 
 // Font weights
 $light 	 : 100;
-$regular : 300;
+$regular : 400;
 $medium  : 500;
 $bold    : 700;
 
 
 // Primary Font
-$primary-font-family : 'open sans', 'helvetica neue', sans-serif;
+$primary-font-family : 'roboto', 'helvetica neue', 'helvetica', 'tahoma', 'arial', sans-serif;
 $primary-font-weight : $regular;
 $primary-font-size   : 16px;
 $primary-font-color  : $black;

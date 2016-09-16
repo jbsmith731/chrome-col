@@ -6,7 +6,6 @@ TYPOGRAPHY
 
 */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,700');
 
 body {
 	font-family:$primary-font-family;
@@ -18,10 +17,19 @@ body {
 
 h1, h2, h3, h4 {
 	margin: 0;
+	line-height: 1.5;
 }
 
 h1 {
+	font-size: 3rem;
+	font-weight: 700;
 
+	span {
+		display: block;
+		font-size: 1rem;
+		font-weight: 400;
+		color: rgba($black, 0.4);
+	}
 }
 
 h2 {
