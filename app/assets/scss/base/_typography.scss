@@ -1,0 +1,43 @@
+/*
+
+-------------------------------------------------------------
+
+TYPOGRAPHY
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,700');
+
+body {
+	font-family:$primary-font-family;
+	font-weight:$primary-font-weight;
+	font-size:$primary-font-size;
+	color:$primary-font-color;
+	line-height:$primary-line-height;
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+a {
+
+}
+
+.text-center { text-align: center; }

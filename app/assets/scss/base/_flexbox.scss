@@ -1,0 +1,70 @@
+/*
+
+-------------------------------------------------------------
+
+FLEXBOX
+
+*/
+
+// flexbox container properties
+.flex {
+	display: flex;
+
+	&.row {
+		flex-flow: row wrap;
+		margin: 0 -15px;
+
+		&--reverse { flex-direction: row-reverse; }
+	}
+
+	&.column {
+		flex-direction: column;
+
+		&--reverse { flex-direction: column-reverse; }
+	}
+
+	// justify content --> horizontal alignment
+	&.justify-start { justify-content: flex-start; }
+
+	&.justify-end { justify-content: flex-end; }
+
+	&.justify-center { justify-content: center; }
+
+	&.space-between { justify-content: space-between; }
+
+	&.space-around { justify-content: space-around; }
+}
+
+
+// align-self properties
+.flex-start { align-self: flex-start; }
+
+.flex-end { align-self: flex-end; }
+
+
+/*
+  create column groups
+  $col-groups, $col-offsets, & $col-gutter set in _variables.scss
+*/
+@each $col in $col-groups {
+
+	.col-#{$col} {
+		@extend %borderbox;
+		flex-basis: percentage(1 / $col);
+		padding: 0 15px;
+
+		// if even number of columns, double width at medium breakpoint
+		@if $col % 2 == 0 {
+			@include breakpoint(medium) { flex-basis: percentage(1 / $col) * 2; }
+		}
+
+		@include breakpoint(small) { flex-basis: 100%; }
+	}
+}
+
+// auto-width -> Use for 1/3 - 2/3 layout
+.col-auto {
+	flex-basis: 0;
+	flex-grow: 1;
+	//padding: 0 15px;
+}

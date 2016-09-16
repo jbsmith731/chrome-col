@@ -1,0 +1,38 @@
+/*
+
+-------------------------------------------------------------
+
+VARIABLES
+
+*/
+
+// Descriptive Colors
+$black   : #000000;
+$white   : #ffffff;
+$blue    : #2196F3;
+
+
+// Font weights
+$light 	 : 100;
+$regular : 300;
+$medium  : 500;
+$bold    : 700;
+
+
+// Primary Font
+$primary-font-family : 'open sans', 'helvetica neue', sans-serif;
+$primary-font-weight : $regular;
+$primary-font-size   : 16px;
+$primary-font-color  : $black;
+$primary-link-color  : $black;
+$primary-line-height : 1.5;
+
+
+// Columns
+$col-groups  : 2 3 4;
+$col-gutter  : 30px;
+$col-offsets : false;
+
+
+// Easing
+$easeOutQuint: cubic-bezier(0.230, 1.000, 0.320, 1.000);

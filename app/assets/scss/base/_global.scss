@@ -1,0 +1,51 @@
+/*
+
+-------------------------------------------------------------
+
+GLOBAL
+
+*/
+
+
+body {
+	padding:0px;
+	margin:0px;
+}
+
+body.body-modal-open { overflow:hidden; }
+
+.container {
+	margin:auto;
+	width: 1200px;
+	position:relative;
+
+	@include breakpoint(large) {
+		width: 1000px;
+	}
+	@include breakpoint(medium) {
+		width: 750px;
+	}
+	@include breakpoint(small) {
+		width: 90%;
+	}
+}
+
+/* general */
+
+img { max-width:100%; }
+
+
+// % for @extends
+%borderbox {
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+
+%hide-ipad {
+	@include breakpoint(medium) { display:none; }
+}
+
+%hide-mobile {
+	@include breakpoint(small) { display:none; }
+}
