@@ -6,7 +6,8 @@ var gulp 					= require('gulp'),
 		uglify 				= require('gulp-uglify'),
 		gulpif 				= require('gulp-if'),
 		runSequence 	= require('run-sequence'),
-		plumber				= require('gulp-plumber');
+		plumber				= require('gulp-plumber'),
+		ghPages 			= require('gulp-gh-pages');
 
 var onError = function (err) {
   console.log(err);
@@ -76,3 +77,10 @@ gulp.task('default', function (callback) {
 		callback
 	)
 })
+
+// DEPLOY!!!!!!
+// ---------------
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
