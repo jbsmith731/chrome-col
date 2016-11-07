@@ -62,12 +62,17 @@ gulp.task('move', function() {
   .pipe(gulp.dest('dist/assets'))
 })
 
+gulp.task('moveTwo', function() {
+	return gulp.src('./CNAME')
+	.pipe(gulp.dest('dist'))
+})
+
 
 // Build Sequences
 // ---------------
 
 gulp.task('build', function (callback) {
-	runSequence(['sass', 'useref', 'move'],
+	runSequence(['sass', 'useref', 'move', 'moveTwo'],
 		callback
 	)
 })
