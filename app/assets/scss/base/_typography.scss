@@ -30,6 +30,11 @@ h1 {
 		font-weight: 400;
 		color: rgba($black, 0.4);
 	}
+
+	@include breakpoint(small) {
+		font-size: 2rem;
+		line-height: 1.5;
+	}
 }
 
 h2 {

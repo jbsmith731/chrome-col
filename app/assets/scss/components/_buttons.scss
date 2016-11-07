@@ -9,7 +9,7 @@ BUTTONS
 
 .btn {
   display: inline-block;
-  line-height:64px;
+  line-height:56px;
   padding: 0 48px;
   border-radius: 2rem;
   background-color: $red;
@@ -19,6 +19,6 @@ BUTTONS
   margin: auto;
 
   &:hover {
-    background-color: darken($black, 5%);
+    background-color: darken($red, 5%);
   }
 }

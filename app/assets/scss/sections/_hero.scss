@@ -12,11 +12,6 @@ HERO STYLES
   align-items: center;
   justify-content: center;
   background-color: $white;
-  // background-image: linear-gradient(
-  // 90deg,
-  // transparent 99%,
-  // rgba(0,0,0,0.05) 1px);
-  // background-size:8.3333339%;
 
   .container {
     display: flex;
@@ -25,7 +20,7 @@ HERO STYLES
   }
 
   .btn {
-    margin-top: 3.5rem;
+    margin-top: 3rem;
   }
 
 }
