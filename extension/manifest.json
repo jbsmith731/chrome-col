@@ -3,7 +3,7 @@
 
   "name": "Columnize - Configurable Column Overlay",
   "description": "Overlay a configurable grid on your website to help you nail all those gnarly offsets",
-  "version": "0.1",
+  "version": "0.2",
 
   "browser_action": {
     "default_popup": "./html/popup.html"
