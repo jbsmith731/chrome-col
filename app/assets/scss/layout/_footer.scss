@@ -1,7 +1,21 @@
-/* 
+/*
 
 -------------------------------------------------------------
 
 FOOTER
 
 */
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba($black, 0.4);
+
+  .heart { color: $red; }
+}

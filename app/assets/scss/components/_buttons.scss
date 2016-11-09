@@ -20,5 +20,6 @@ BUTTONS
 
   &:hover {
     background-color: darken($red, 5%);
+    color: $white;
   }
 }

@@ -50,7 +50,11 @@ h4 {
 }
 
 a {
+	color: inherit;
+	text-decoration: none;
+	transition: all 0.4s $easeOutQuint;
 
+	&:hover { color: $red; }
 }
 
 .text-center { text-align: center; }
